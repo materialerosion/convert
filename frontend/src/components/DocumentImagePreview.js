@@ -26,7 +26,8 @@ const DocumentImagePreview = ({
       console.log('Full URL will be:', `http://localhost:3001${imageUrl}`);
       setImageError(null);
       const img = new window.Image();
-      img.crossOrigin = 'anonymous';
+      // Remove crossOrigin to avoid CORS issues
+      // img.crossOrigin = 'anonymous';
       img.onload = () => {
         setImage(img);
         // Adjust canvas size to fit image
